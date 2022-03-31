@@ -54,9 +54,31 @@
 	$prev = $page - 1;
 	$next = $page + 1;
 ?>
+<script src="http://10.109.87.10:8080/scripts/js/jquery-2.2.4.min.js"></script>
+<script src="http://10.109.87.10:8080/scripts/js/bootstrap.min.js"></script>
+<script language="javascript"> 
+	$(document).ready(function () {
+    var theHREF;
+
+    $(".confirmModalLink").click(function(e) {
+        e.preventDefault();
+        theHREF = $(this).attr("href");
+        $("#confirmModal").modal("show");
+    });
+
+    $("#confirmModalNo").click(function(e) {
+        $("#confirmModal").modal("hide");
+    });
+
+    $("#confirmModalYes").click(function(e) {
+        window.location.href = theHREF;
+    });
+});
+</script>
+
 <style type="text/css"> .btn2{ width:130px; } </style>
 <style type="text/css"> .btn3{ width:180px; } </style>
-<link href="inc/iz-modal.css" rel="stylesheet" type="text/css" />
+<link href="http://10.109.87.10:8080/scripts/inc/iz-modal.css" rel="stylesheet" type="text/css" />
 
 <!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -142,8 +164,20 @@
 				<td><?php echo date("d.m.Y",strtotime($detdjoummah['lv_rep'])); ?></td>
 				<td><?php echo $detdjoummah['lv_selfs']; ?></td>
 				<td>-<?php echo $detdjoummah['lv_type1']."-".$detdjoummah['lv_type2']."-".$detdjoummah['lv_type3']."-".$detdjoummah['lv_type4']; ?></td>
-				<td><?php echo $detdjoummah['lv_state']; 
-				echo("</td><td><a href=\"detdjoummahdmdrh.php?id=".$detdjoummah['lv_id']."&nopers=".$detdjoummah['lv_nopers']."&page=".$page."\" class=\"d-none d-sm-inline-block btn btn-sm btn-success btn-circle shadow-sm\" title=\"Detailler\"><i class=\"fas fa-list\"></i></a></td>"); ?>										
+			  
+			  <?php
+				if ($detdjoummah['lv_state']=="")
+				{
+					echo("<td bgcolor=\"#FF0000\" class=\"text-white\">INACHEVEE</td>");
+					echo("<td><a href=\"supdjoummahdmdrh.php?id=".$detdjoummah['lv_id']."&nopers=".$detdjoummah['lv_nopers']."\" data-toggle=\"modal\" data-target=\"#confirmModal\" class=\"confirmModalLink btn-danger btn-circle btn-sm\" title=\"Supprimer\"><i class=\"fas fa-remove text-white\"></i></a></td>");
+				}
+				else
+				{
+					echo("<td>".$detdjoummah['lv_state']."</td>");
+					echo("<td><a href=\"detdjoummahdmdrh.php?id=".$detdjoummah['lv_id']."&nopers=".$detdjoummah['lv_nopers']."&page=".$page."\" class=\"d-none d-sm-inline-block btn btn-sm btn-success btn-circle shadow-sm\" title=\"Detailler\"><i class=\"fas fa-list\"></i></a></td>"); 										
+				}
+			  ?>
+			  
 			</tr>
           <?php endforeach; ?>
         </tbody>
@@ -188,6 +222,21 @@
   </div>
   <!-- End of Page Wrapper -->
 
+	<!-- Dialog Modal-->
+	<div class="modal fade fond" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+	  <div class="modal-header">     
+		<h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+      </div>
+      <div class="modal-body">
+        Cliquez sur "OUI" pour confirmer votre choix
+	  </div>
+      <div class="modal-footer">
+		<?php echo("<a href=\"rechdjmrh2.php?nopers=".$nopers."\" class=\"btn btn-danger\" id=\"confirmModalNo\">Non</a>"); ?>
+		<a href="#" class="btn btn-success" id="confirmModalYes">Oui</a>
+      </div>
+
+	</div>
 	
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>

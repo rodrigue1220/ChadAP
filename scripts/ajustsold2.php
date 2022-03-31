@@ -22,8 +22,8 @@
 	include("inc/taarikh.php");
 	include("inc/headers.php");
 ?>
-<script src="js/jquery-2.2.4.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="http://10.109.87.10:8080/scripts/js/jquery-2.2.4.min.js"></script>
+<script src="http://10.109.87.10:8080/scripts/js/bootstrap.min.js"></script>
 <script language="javascript"> 
 	$(document).ready(function () {
     var theHREF;
@@ -44,7 +44,7 @@
 });
 </script>
 <style type="text/css"> .btn3{ width:180px; } </style>
-<link href="inc/iz-modal.css" rel="stylesheet" type="text/css" />
+<link href="http://10.109.87.10:8080/scripts/inc/iz-modal.css" rel="stylesheet" type="text/css" />
 
 	<!-- Page Heading -->
 	<div class="d-sm-flex align-items-center justify-content-between mb-4">
