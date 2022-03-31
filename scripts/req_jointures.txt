@@ -1,0 +1,6 @@
+SELECT sv.vars_id, sv.vars_item, sv.vars_nbr, sv.vars_nbraprv, sv.vars_sens, sv.vars_date, sv.vars_type, j.stock_nbr, j.stock_item, p.catart_code, p.catart_nom
+FROM wfp_chd_sandoukvar sv 
+INNER JOIN wfp_chd_sandouk j 
+ON j.stock_item = sv.vars_item
+INNER JOIN wfp_chd_catart p
+ON p.catart_code = sv.vars_item

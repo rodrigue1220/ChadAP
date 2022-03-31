@@ -1,0 +1,17 @@
+SELECT * FROM `user` WHERE tel="66993202" OR tel2="66993202"
+
+66993202 / laetitia.gahimbaza@wfp.org
+66993420 / maimouna.doudou@wfp.org
+66993484 / haou.ngomossi@wfp.org
+66993822 / noudjalbaye.yimmingar@wfp.org / 66993425
+68562345 / abakar.idriss@wfp.org
+68562373 / lema.heppa@wfp.org
+
+2,54711E+11 254711147209
+
+2,54722E+11 254722412978
+
+SELECT * FROM `wfp_chd_bilpp` WHERE MSISDN_NO="66993120" AND CALLED_NO LIKE "%E+%"  
+ORDER BY `wfp_chd_bilpp`.`CALLED_NO` ASC
+
+UPDATE `wfp_chd_bilpp` SET CALLED_NO="254722412978" WHERE MSISDN_NO="66993120" AND CALLED_NO="2,54722E+11"

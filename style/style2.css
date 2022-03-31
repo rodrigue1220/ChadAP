@@ -1,0 +1,37 @@
+<--Feuille principale-->{}
+body
+{
+  background-image : url(../img/newfpheader.jpg);
+  background-repeat:no-repeat;
+  background-color: #ffffff;
+
+  scrollbar-base-color:white;
+  scrollbar-3dlight-color:grey;
+  scrollbar-arrow-color:black;
+  scrollbar-darkshadow-color:#000000;
+  scrollbar-face-color:#E0E0E0;
+  scrollbar-highlight-color:skyblue;
+  scrollbar-shadow-color:#000000;
+  scrollbar-track-color:black;
+}
+
+
+<--Forme des boutons normaux-->{}
+button
+{
+  background-color : #e3e3e3;
+  font-family :  "Trebuchet MS", "Myriad Pro", sans-serif;
+  color : #000000;
+  font-weight:bold;
+  text-align: center;
+  width: 160;
+  cursor:pointer;
+}
+
+button:hover {
+	background: #3CA2E9;
+	-moz-box-shadow: 0px 0px 2px #eaeaea inset;
+	-webkit-box-shadow: 0px 0px 2px #eaeaea inset;
+	box-shadow: 0px 0px 2px #eaeaea inset;
+	color: #fff;
+}

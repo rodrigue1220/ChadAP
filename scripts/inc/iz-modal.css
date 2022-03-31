@@ -1,0 +1,16 @@
+.fond{
+    background: rgba(0,0,0,0.7);
+    display: none; 
+	color: #ffffff;
+	-webkit-transition: opacity 500ms ease-in !important;
+	-moz-transition: opacity 500ms ease-in !important;
+	transition: opacity 500ms ease-in !important;
+	-webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    border-radius: 10px !important;
+	margin-top: 1%;
+    margin-left: 25%; 
+	margin-right: 25%;
+	width: 50%;
+	height: 40%; 
+}

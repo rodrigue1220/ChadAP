@@ -1,0 +1,2 @@
+SELECT MONTH(cto_deb2) AS Mois, SEC_TO_TIME( SUM(TIME_TO_SEC(cto_dure)) ) AS Duree FROM `wfp_chd_djmcto` GROUP BY MONTH(cto_deb2), cto_type
+SELECT DATE_FORMAT(cto_deb2, '%m-%Y') FROM `wfp_chd_djmcto` 

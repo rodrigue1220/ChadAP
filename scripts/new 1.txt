@@ -1,0 +1,26 @@
+<table> 
+        <tr><form method="get" action="rechsancpnom.php"> 
+			<td><input type="text" id="nom" name="nom" /></td>
+			<td><input type="submit" value="Par Nom /Prenom" /></td>
+		</form> 
+		<form method="get" action="rechsancpmat.php"> 
+			<td><input type="text" id="mat" name="mat" /></td>
+			<td><input type="submit" value="Par Matricule" /></td>
+		</form> 
+		<form method="get" action="rechsancpcls.php"> 
+			<td><select id="cls" name="cls">
+				<option> Choisir... </option>
+            	<?php
+					include('connexion2.php');
+					$sqlb = "SELECT cls_nom FROM classe" ;
+					$requeteb = $mysqli->query( $sqlb ) ;
+
+					while( $resultb = $requeteb->fetch_assoc() )
+					{
+						echo("<option> ".$resultb['cls_nom']." </option>");
+				 	}			
+				?>
+				</select></td>
+			  <td><input type="submit" value="Par Classe" /></td>
+		</form></tr>		
+   </table>

@@ -1,0 +1,1 @@
+SELECT * FROM `wfp_chd_bilpp` WHERE MONTH="dec-20" AND TYPE_SIM="HYBRIDE" ORDER BY `wfp_chd_bilpp`.`ID` DESC 

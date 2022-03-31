@@ -1,0 +1,10 @@
+DELETE FROM wfp_chd_majbilling
+LEFT OUTER JOIN (
+        SELECT MIN(maj_id) AS id, maj_tel, maj_mois
+        FROM wfp_chd_majbilling
+        GROUP BY maj_tel, maj_mois
+    ) as t1 
+    ON wfp_chd_majbilling.maj_id = t1.id
+WHERE t1.id IS NULL
+
+SELECT COUNT(*) AS nbr_doublon, MSISDN_NO, MONTH FROM wfp_chd_bilpp WHERE STATE="ATTENTE" GROUP BY MSISDN_NO, MONTH HAVING COUNT(*) > 1 

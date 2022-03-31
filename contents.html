@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Test PORTS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+	<p>***** Test which uses port 3306 *****
+
+===== Tested by command netstat filtered on port 3306 =====
+
+
+Test for TCP
+Your port 3306 is used by a processus with PID = 5096
+The processus of PID 5096 is 'mysqld.exe' Session: Services
+The service of PID 5096 for 'mysqld.exe' is 'wampmysqld64'
+This service is from Wampserver - It is correct
+
+Test for TCPv6
+Your port 3306 is used by a processus with PID = 5096
+The processus of PID 5096 is 'mysqld.exe' Session: Services
+The service of PID 5096 for 'mysqld.exe' is 'wampmysqld64'
+This service is from Wampserver - It is correct
+
+
+***** Test which uses port 80 *****
+
+===== Tested by command netstat filtered on port 80 =====
+
+
+Test for TCP
+Your port 80 is used by a processus with PID = 4
+The processus of PID 4 is 'System' Session: Services
+The service of PID 4 for 'System' is 'N/A'
+*** ERROR *** This service IS NOT from Wampserver - Should be: 'wampapache64'
+
+Test for TCPv6
+Your port 80 is used by a processus with PID = 4
+The processus of PID 4 is 'System' Session: Services
+The service of PID 4 for 'System' is 'N/A'
+*** ERROR *** This service IS NOT from Wampserver - Should be: 'wampapache64'
+
+===== Tested by attempting to open a socket on port 80 =====
+
+Your port 80 is actually used by :
+
+Server: Microsoft-IIS/10.0
+
+***** Test which uses port 8090 *****
+
+===== Tested by command netstat filtered on port 8090 =====
+
+
+Test for TCP
+Your port 8090 is used by a processus with PID = 5816
+The processus of PID 5816 is 'httpd.exe' Session: Services
+The service of PID 5816 for 'httpd.exe' is 'wampapache64'
+This service is from Wampserver - It is correct
+
+Test for TCPv6
+Your port 8090 is used by a processus with PID = 5816
+The processus of PID 5816 is 'httpd.exe' Session: Services
+The service of PID 5816 for 'httpd.exe' is 'wampapache64'
+This service is from Wampserver - It is correct
+
+===== Tested by attempting to open a socket on port 8090 =====
+
+Your port 8090 is actually used by :
+
+Server: Apache/2.4.27 (Win64) PHP/5.6.31
+ </p>
+  </body>
+</html>
